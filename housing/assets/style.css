@@ -1,0 +1,24 @@
+*{
+    scroll-behavior: smooth;
+}
+.bannerSearch{
+    top: 80vh;  
+}
+.shw{
+    box-shadow: inset 9px 9px 45px rgba(163, 163, 163, 0.973), inset -9px -9px 45px rgb(181, 216, 247);
+}
+.abtCard{
+    position: absolute;
+    top: 185vh;
+}
+@media (max-width:700px){
+    .bannerSearch{
+        top: 74vh;
+    }
+}
+@media (max-width:1020px){
+    .abtCard{
+        position: relative;
+        top: -10vh;
+    }
+}
