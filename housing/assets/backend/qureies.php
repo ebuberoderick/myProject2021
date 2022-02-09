@@ -39,11 +39,15 @@
         $thI = $data ['houseId'];
         $dat = $conn->query("SELECT * FROM houses WHERE id='$thI'")->fetch_assoc();
         $th = $dat['id'];
-        $da = $conn->query("SELECT * FROM imgs WHERE houseId='$th'")->fetch_assoc();
+        $da = $conn->query("SELECT * FROM imgs WHERE houseId='$th'");
+        $a=array();
+        while ($imgs = $da->fetch_assoc()) {
+            array_push($a,$imgs);
+        }
         echo json_encode([
             'data'=>$data ,
             'ext' => $dat,
-            'imgs' => $da
+            'imgs' => $a
         ]);
     }elseif ($action == 'RemProp') {
         $id = $_POST['val'];

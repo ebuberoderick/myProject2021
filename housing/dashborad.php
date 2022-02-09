@@ -77,14 +77,7 @@
 <div class="fixed bg-black VMM hidden bg-opacity-40 w-screen h-screen top-0 right-0 z-40 flex items-center">
     <div class="w-full">
         <div class="max-w-md p-3 space-y-5 relative bg-white mx-auto">
-            <div class="imgPart space-y-2">
-                <div class="h-52 bg-red-900"></div>
-                <div class="flex justify-center gap-3">
-                    <div class="h-12 w-12 bg-red-900 cursor-pointer"></div>
-                    <div class="h-12 w-12 bg-red-900 cursor-pointer"></div>
-                    <div class="h-12 w-12 bg-red-900 cursor-pointer"></div>
-                </div>
-            </div>
+            <div class="imgPart space-y-2"></div>
             <div class="data space-y-2"></div>
             <div class="text-center VMMC cursor-pointer hover:bg-gray-200 py-5">
                 Close

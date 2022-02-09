@@ -47,7 +47,7 @@ $(document).ready(function() {
         $('.menu').toggleClass('hidden flex')
         $('.sidenav').toggleClass('-ml-72')
     })
-
+    var adminShowingGallery
     $('.VM').on('click',function(){
         var data = {
             action : 'VM',
@@ -71,6 +71,8 @@ $(document).ready(function() {
                         <div class="">Date Booked : <span>${response.data.crt_at}</span></div> 
                     `
                 )
+                AddloadPrev(response.imgs , 1)
+                adminShowingGallery = response.imgs
                 $('.VMM').removeClass('hidden')
             }
         });
@@ -100,6 +102,9 @@ $(document).ready(function() {
 
     $('.view').on('click','.imgOPtionS',function(){
         loadPrev(ShowingGallery,$(this).attr('id'));
+    })
+    $('.imgPart').on('click','.AddimgOpt',function(){
+        AddloadPrev(adminShowingGallery,$(this).attr('id'));
     })
 
     $('.view').on('click','.ri-close-line', function(){
@@ -131,6 +136,27 @@ $(document).ready(function() {
                     </div>
                 </div>
             </div>`
+        )
+    }
+
+    function AddloadPrev(res , id) {
+        var gallery =''
+        for (i = 0; i < res.length; i++) {
+            gallery +=`
+                <div class="h-12 w-12 bg-red-900 AddimgOpt cursor-pointer" id="${i}">
+                    <img src="${res[i].imgName}" alt="" class="h-full w-full">
+                </div>
+            `
+        }
+        $('.imgPart').html(
+            `
+                <div class="h-52 bg-red-900 relative">
+                    <img src="${res[id].imgName}" alt="" class="absolute h-full w-full">
+                </div>
+                <div class="flex justify-center gap-3">
+                    ${gallery}
+                </div>
+            `
         )
     }
 })
