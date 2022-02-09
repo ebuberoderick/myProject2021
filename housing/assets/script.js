@@ -71,7 +71,7 @@ $(document).ready(function() {
                         <div class="">Date Booked : <span>${response.data.crt_at}</span></div> 
                     `
                 )
-                AddloadPrev(response.imgs , 1)
+                AddloadPrev(response.imgs , 0)
                 adminShowingGallery = response.imgs
                 $('.VMM').removeClass('hidden')
             }
@@ -95,7 +95,7 @@ $(document).ready(function() {
             dataType: "json",
             success: function (res) {
                 ShowingGallery = res
-                loadPrev(res,1)
+                loadPrev(res,0)
             }
         });
     })
